@@ -38,7 +38,7 @@ const Footer = () => {
 
   return (
     <div className="bg-gray-800  ">
-      <footer className=" px-5 lg:px-0  py-28  my_container grid grid-cols-1 lg:grid-cols-3 gap-0 lg:gap-28">
+      <footer className=" px-5 lg:px-0  py-20  my_container grid grid-cols-1 md:grid-cols-3 gap-0 md:gap-16 lg:gap-28">
         <div>
           <Link
             href="/"
@@ -83,7 +83,7 @@ const Footer = () => {
             </Link>
           </div>
         </div>
-        <div className=" text-left lg:text-center">
+        <div className=" text-left md:text-center">
           <h2 className="text-2xl font-semibold text-white  mt-6 mb-5">
             UseFul Links
           </h2>

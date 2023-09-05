@@ -47,8 +47,8 @@ const Nabvar = () => {
     <div className="flex items-center justify-between py-3 md:block">
       <Link href="/" className=" flex items-center italic text-lg font-bold">
         <Image src={logoImg} alt="logo" width={65} height={65}></Image>
-        <span className="text-[#702461] ">Re-zan</span>
-        <span className=" text-[#c94257]">Charity</span>
+        <span className="text-[#702461]  md:text-sm lg:text-xl">Re-zan</span>
+        <span className=" text-[#c94257] md:text-sm lg:text-xl">Charity</span>
       </Link>
       <div className="md:hidden">
         <button
@@ -95,16 +95,16 @@ const Nabvar = () => {
         <Brand />
       </div>
       <nav
-        className={`pb-5 md:text-sm ${
+        className={` md:text-sm ${
           state
             ? "absolute z-20 top-0 inset-x-0 bg-white rounded-xl mx-2 mt-2 md:mx-0 md:mt-0 md:relative md:bg-transparent"
             : ""
         }`}
       >
-        <div className="gap-x-14 items-center max-w-screen-xl mx-auto px-4 md:flex md:px-8">
+        <div className="gap-x-14 items-center max-w-screen-xl mx-auto px-4 md:flex md:px-8 lg:px-0">
           <Brand />
           <div
-            className={`flex-1 items-center mt-8 md:mt-0 md:flex ${
+            className={`flex-1 items-center mt-8 md:mt-0 md:flex pb-5 ${
               state ? "block" : "hidden"
             } `}
           >
