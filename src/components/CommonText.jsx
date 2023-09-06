@@ -1,19 +1,16 @@
 import React from "react";
 import { pacifico, zila } from "@/utils/fonts";
 
-const CommonText = () => {
+const CommonText = ({ title, description, postion }) => {
   return (
-    <div>
-      <h2 className={`${pacifico.className}  text-5xl text-[#aa3b4c]`}>
-        {" "}
-        Our Upcoming Events
+    <div className={`text-${postion} space-y-4`}>
+      <h2 className={`${pacifico.className}  text-5xl text-[#aa3b4c] p-2`}>
+        {title}
       </h2>
-      <p className={`${zila.className}  text-2xl  text-black `}>
-        Re-zanCharity is a compassionate and impactful charity website dedicated
-        to making the world a better place. Through our diverse charitable
-        initiatives and global community, we strive to uplift disadvantaged
-        lives, foster positive change, and inspire hope. Join us in our mission
-        to create a brighter, more compassionate future for all.
+      <p
+        className={`${zila.className}  text-xl  text-black md:w-[500px] lg:w-[800px] mx-auto p-2`}
+      >
+        {description}
       </p>
     </div>
   );

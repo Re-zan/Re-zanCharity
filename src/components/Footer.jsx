@@ -113,7 +113,8 @@ const Footer = () => {
           <h2 className="text-2xl font-semibold text-white mt-6 mb-5">
             Contact us
           </h2>
-          <div className="flex items-center  text-white ">
+
+          <div className="flex items-center  text-white">
             <FaPhoneAlt className="text-[#c94257] mr-4 text-xl"></FaPhoneAlt>
             <p className="text-base">+ 018834344546</p>{" "}
           </div>
@@ -121,7 +122,7 @@ const Footer = () => {
             <FaEnvelopeOpen className="text-[#c94257] mr-4 text-xl"></FaEnvelopeOpen>
             <p className="text-base">info@gamil.com</p>{" "}
           </div>
-          <div className="flex items-center  text-white ">
+          <div className="flex items-center  text-white">
             <FaLocationArrow className="text-[#c94257] mr-4 text-xl"></FaLocationArrow>
             <p className="text-base">Oxygen Chittagong</p>{" "}
           </div>

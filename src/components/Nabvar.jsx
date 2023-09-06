@@ -104,7 +104,7 @@ const Nabvar = () => {
         <div className="gap-x-14 items-center max-w-screen-xl mx-auto px-4 md:flex md:px-8 lg:px-0">
           <Brand />
           <div
-            className={`flex-1 items-center mt-8 md:mt-0 md:flex pb-5 ${
+            className={`flex-1 items-center mt-8 md:mt-0 md:flex  ${
               state ? "block" : "hidden"
             } `}
           >
