@@ -1,8 +1,16 @@
+"use client";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 import React from "react";
 import { pacifico } from "@/utils/fonts";
 import DonarsSingle from "./DonarsSingle";
 
 const MeetOurDonnar = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   const donors = [
     {
       id: 1,
@@ -36,7 +44,13 @@ const MeetOurDonnar = () => {
   ];
   return (
     <section className="my-24  relative">
-      <div className="absolute text-center -mt-16 md:-mt-0 md:text-left my_container left-0 lg:left-32 top-0  border-dashed  border-b-2 border-b-[#aa3b4c] ">
+      <div
+        className="absolute text-center -mt-16 md:-mt-0 md:text-left my_container left-0 lg:left-32 top-0  border-dashed  border-b-2 border-b-[#aa3b4c]"
+        data-aos="fade-right"
+        data-aos-offset="200"
+        data-aos-easing="ease-in-sine"
+        data-aos-duration="600"
+      >
         <h2
           className={`${pacifico.className} text-2xl  md:text-3xl lg:text-5xl text-[#aa3b4c] p-2 `}
         >

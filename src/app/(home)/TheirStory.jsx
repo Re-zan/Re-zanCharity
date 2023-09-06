@@ -14,7 +14,16 @@ import "./their_story_styles.css";
 import { Pagination } from "swiper/modules";
 import TheirSingleStory from "./TheirSingleStory";
 
+//aos
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
+
 const TheirStory = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   const heartwarmingStories = [
     {
       id: 1,
@@ -62,7 +71,13 @@ const TheirStory = () => {
 
   return (
     <section className="my_container my-20 grid grid-cols-1 md:grid-cols-2 gap-20">
-      <div className=" swiperData">
+      <div
+        className=" swiperData"
+        data-aos="fade-up-right"
+        data-aos-offset="200"
+        data-aos-easing="ease-in-sine"
+        data-aos-duration="900"
+      >
         <Swiper
           slidesPerView={"auto"}
           centeredSlides={true}
@@ -82,7 +97,13 @@ const TheirStory = () => {
       </div>
 
       <div className="flex items-center justify-end pr-3 lg:pr-0">
-        <div className="space-y-5 text-end">
+        <div
+          className="space-y-5 text-end"
+          data-aos="zoom-in-up"
+          data-aos-offset="200"
+          data-aos-easing="ease-in-sine"
+          data-aos-duration="700"
+        >
           <h2 className={`${pacifico.className}  text-5xl text-[#aa3b4c]`}>
             Their Story Is Our Story
           </h2>

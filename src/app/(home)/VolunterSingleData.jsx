@@ -1,14 +1,37 @@
+"use client";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 import React from "react";
 import { pacifico, zila } from "@/utils/fonts";
 import Image from "next/image";
 import { FaPhoneAlt } from "react-icons/fa";
 const VolunterSingleData = ({ items }) => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   const { name, age, image, phone_number } = items;
   return (
     <>
       <div className=" relative text-center  p-4  shadow-lg mt-5 md:mt-0 z-0 ">
-        <Image src={image} alt="Our Team " width={500} height={500}></Image>
-        <div className=" space-y-2 p-3 bg-[#fdfdfd] w-[220px] mx-auto  z-30 absolute -bottom-10  left-9 md:left-16 lg:left-9 hover_transtion_effect ">
+        <Image
+          src={image}
+          alt="Our Team "
+          width={500}
+          height={500}
+          data-aos="fade-down"
+          data-aos-offset="200"
+          data-aos-easing="ease-in-sine"
+          data-aos-duration="700"
+        ></Image>
+        <div
+          className=" space-y-2 p-3 bg-[#fdfdfd] w-[120px] md:w-[220px] mx-auto  z-30 absolute -bottom-3 md:-bottom-10  left-0 md:left-16 lg:left-9 hover_transtion_effect "
+          data-aos="fade-up"
+          data-aos-offset="200"
+          data-aos-easing="ease-in-sine"
+          data-aos-duration="700"
+        >
           <h3 className={`${pacifico.className} text-2xl text-[#7c276b]`}>
             {name}
           </h3>

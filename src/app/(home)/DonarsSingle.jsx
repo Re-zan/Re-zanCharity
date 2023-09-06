@@ -1,13 +1,24 @@
+"use client";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 import React from "react";
 import { pacifico, zila } from "@/utils/fonts";
-import { FaLocationArrow } from "react-icons/fa";
 import Image from "next/image";
 const DonarsSingle = ({ items }) => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   const { name, age, image, donation_amount, small_info } = items;
   return (
     <div>
-      {" "}
-      <div className=" text-white mb-5 space-y-2  flex justify-end gap-4">
+      <div
+        className=" text-white mb-5 space-y-2  flex justify-end gap-4"
+        data-aos="fade-up"
+        data-aos-offset="200"
+        data-aos-easing="ease-in-sine"
+        data-aos-duration="800"
+      >
         <div className="flex items-center">
           <div>
             {" "}
@@ -25,7 +36,13 @@ const DonarsSingle = ({ items }) => {
         </div>
         <Image alt="Donars" src={image} width={90} height={50}></Image>
       </div>
-      <hr className=" bg-white my-4" />
+      <hr
+        className=" bg-white my-4"
+        data-aos="fade-up"
+        data-aos-offset="200"
+        data-aos-easing="ease-in-sine"
+        data-aos-duration="800"
+      />
     </div>
   );
 };

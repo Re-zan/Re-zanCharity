@@ -5,7 +5,7 @@ import { pacifico, zila } from "@/utils/fonts";
 const TheirSingleStory = ({ items }) => {
   const { name, age, story } = items;
   return (
-    <div className=" dsif">
+    <div className="pb-6 md:pb-0">
       {" "}
       <div className=" rounded-lg text-center border  bg-[#fdfdfd] shadow-lg mt-5 md:mt-0 p-6">
         <div className=" space-y-3 px-3">
