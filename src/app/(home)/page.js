@@ -3,6 +3,10 @@ import React from "react";
 import BannerBottomtext from "./BannerBottomtext";
 import OurSponsers from "./OurSponsers";
 import Services from "./Services";
+import OurEvents from "./OurEvents";
+import WhoWeAre from "./WhoWeAre";
+import MeetOurDonnar from "./MeetOurDonnar";
+import MeetOurVlouantre from "./MeetOurVlouantre";
 
 const Homepage = () => {
   return (
@@ -16,6 +20,18 @@ const Homepage = () => {
       {/* service part start */}
       <Services></Services>
       {/* service part  end*/}
+      {/* event part start */}
+      <OurEvents></OurEvents>
+      {/* event part  end*/}
+      {/* who we are part start */}
+      <WhoWeAre></WhoWeAre>
+      {/* who we are part  end*/}
+      {/*  meet ourvlouanterr part start */}
+      <MeetOurVlouantre></MeetOurVlouantre>
+      {/* meet our vlouanter part  end*/}
+      {/*  meet our donar part start */}
+      <MeetOurDonnar></MeetOurDonnar>
+      {/* meet our donar part  end*/}
       {/* our sponsers part start */}
       <OurSponsers></OurSponsers>
       {/* our sponsers part  end*/}

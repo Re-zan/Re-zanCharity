@@ -8,7 +8,7 @@ const CommonText = ({ title, description, postion }) => {
         {title}
       </h2>
       <p
-        className={`${zila.className}  text-xl  text-black md:w-[500px] lg:w-[800px] mx-auto p-2`}
+        className={`${zila.className}  text-xl  text-[#5c5b5c] md:w-[500px] lg:w-[800px] mx-auto p-2`}
       >
         {description}
       </p>

@@ -45,12 +45,12 @@ const Services = () => {
       {" "}
       {/* section heading part */}
       <CommonText
-        title="Our Services"
+        title="Our Causes"
         postion="center"
-        description="Our cherished Friends & Sponsors are the heart of Re-zanCharity, igniting hope and transformation through their dedicated partnership."
+        description="Designing impactful and user-friendly services for Re-zanCharity's website to enhance its online presence and donor engagement."
       ></CommonText>
       {/* our service part */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mt-16">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mt-16 px-3 lg:px-0">
         {services.map((items) => (
           <SingleService items={items} key={items.id}></SingleService>
         ))}

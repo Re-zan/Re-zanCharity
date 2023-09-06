@@ -4,7 +4,7 @@ import { pacifico, zila } from "@/utils/fonts";
 const SingleService = ({ items }) => {
   const { name, description, icon } = items || {};
   return (
-    <div className=" rounded-lg text-center space-y-11 border p-4 relative bg-[#fdfdfd] shadow-lg">
+    <div className=" rounded-lg text-center space-y-11 border p-4 relative bg-[#fdfdfd] shadow-lg mt-5 md:mt-0">
       <span className=" bg-[#e04d63] rounded-full w-20 h-20 p-3  absolute left-1/2 transform -translate-x-1/2 -top-10 mb-5 flex items-center justify-center text-white text-3xl">
         {icon}
       </span>
