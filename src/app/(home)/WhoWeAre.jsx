@@ -18,7 +18,7 @@ const WhoWeAre = () => {
           >
             We are a dedicated team at Re-zanCharity, driven by compassion,
             working tirelessly to create positive change and support those in
-            need."
+            need.
           </p>
           <div className="flex justify-center md:justify-start ">
             <Donatebutton></Donatebutton>

@@ -17,12 +17,12 @@ const BannerBottomtext = () => {
           change in communities.
         </p>
 
-        <div className=" h-[120px]  w-[4px] bg-white py-4 relative"></div>
+        <div className=" h-[120px]  w-[4px] bg-white py-4 relative "></div>
         <Image
           src={Img}
           alt="Charity"
           width={70}
-          className=" bg-white rounded-full absolute ml-12 p-1"
+          className=" bg-white rounded-full absolute ml-[50px] p-1 animate-bounce"
         ></Image>
 
         <p className=" px-10 text-justify">

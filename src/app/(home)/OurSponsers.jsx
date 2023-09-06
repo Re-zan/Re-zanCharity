@@ -44,7 +44,7 @@ const OurSponsers = () => {
               key={id}
               width={150}
               height={150}
-              className=" mx-auto  my-4 md:my-0 md:mx-0 p-4 lg:p-0"
+              className=" mx-auto  my-4 md:my-0 md:mx-0 p-4 lg:p-0 "
             ></Image>
           ))}
         </div>

@@ -38,7 +38,7 @@ const MeetOurDonnar = () => {
     <section className="my-24  relative">
       <div className="absolute text-center -mt-16 md:-mt-0 md:text-left my_container left-0 lg:left-32 top-0  border-dashed  border-b-2 border-b-[#aa3b4c] ">
         <h2
-          className={`${pacifico.className} text-2xl  md:text-3xl lg:text-5xl text-[#aa3b4c] p-2`}
+          className={`${pacifico.className} text-2xl  md:text-3xl lg:text-5xl text-[#aa3b4c] p-2 `}
         >
           Meet Our Donars
         </h2>
