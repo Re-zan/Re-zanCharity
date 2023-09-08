@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import bannerImage from "@/assets/banner/Charity_Hands_bg.jpg";
 import styles from "./banner.module.css";
 import { pacifico, zila } from "@/utils/fonts";
 import { Donatebutton, Volanterbutton } from "../Buttons";
@@ -8,7 +7,7 @@ import AOS from "aos";
 import { useEffect } from "react";
 import "aos/dist/aos.css";
 
-const Banner = () => {
+const Banner = ({ title, des, bannerImage }) => {
   useEffect(() => {
     AOS.init();
   }, []);
@@ -29,8 +28,7 @@ const Banner = () => {
           data-aos-easing="ease-in-sine"
           data-aos-duration="600"
         >
-          {" "}
-          Empowering lives through acts of kindness
+          {title}
         </h2>
         <p
           className={`${zila.className}  text-2xl  text-white  mx-auto lg:mx-0 w-[300px] md:w-[700px] lg:w-[800px]`}
@@ -39,9 +37,7 @@ const Banner = () => {
           data-aos-easing="ease-in-sine"
           data-aos-duration="600"
         >
-          Re-zanCharity: Uniting hearts, transforming lives, and spreading hope
-          across the globe through acts of kindness. Together, we make the world
-          a better place—one act of compassion at a time.
+          {des}
         </p>
         <div
           className="flex justify-center lg:justify-start "

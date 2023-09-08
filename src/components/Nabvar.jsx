@@ -32,7 +32,7 @@ const Nabvar = () => {
     },
   ];
 
-  //isactive pathname
+  //active pathname
   const pathname = usePathname();
 
   //resposive menu start
@@ -89,8 +89,13 @@ const Nabvar = () => {
     </div>
   );
   //resposive menu end
+
   return (
-    <header>
+    <header
+      className={` ${
+        pathname === "/logIn" || "/signUp" ? "shadow-2xl" : "shadow-none"
+      } `}
+    >
       <div className={`md:hidden ${state ? "mx-2 pb-5" : "hidden"}`}>
         <Brand />
       </div>
@@ -127,11 +132,11 @@ const Nabvar = () => {
                 );
               })}
               <li>
-                <a
-                  href="/"
+                <Link
+                  href="/logIn"
                   className="flex items-center justify-center gap-x-1 py-2 px-4 text-white font-medium bg-[#702461] active:bg-[#702461] duration-150 rounded-full md:inline-flex"
                 >
-                  Get started
+                  LogIn
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
@@ -144,7 +149,7 @@ const Nabvar = () => {
                       clipRule="evenodd"
                     />
                   </svg>
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

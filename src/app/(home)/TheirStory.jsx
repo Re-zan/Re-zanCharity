@@ -88,8 +88,8 @@ const TheirStory = () => {
           modules={[Pagination]}
           className="mySwiper"
         >
-          {heartwarmingStories.map((items) => (
-            <SwiperSlide key={items._id}>
+          {heartwarmingStories.map((items, index) => (
+            <SwiperSlide key={index}>
               <TheirSingleStory items={items} key={items.id}></TheirSingleStory>
             </SwiperSlide>
           ))}

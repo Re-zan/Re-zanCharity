@@ -4,7 +4,7 @@ import { inter } from "@/utils/fonts";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: "Home",
+  title: "Re-zanCharity | Home",
 };
 
 export default function RootLayout({ children }) {
@@ -12,6 +12,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <Nabvar></Nabvar>
+
         {children}
         <Footer></Footer>
       </body>

@@ -8,12 +8,19 @@ import WhoWeAre from "./WhoWeAre";
 import MeetOurDonnar from "./MeetOurDonnar";
 import MeetOurVlouantre from "./MeetOurVlouantre";
 import TheirStory from "./TheirStory";
+import bannerImage from "@/assets/banner/Charity_Hands_bg.jpg";
 
 const Homepage = () => {
   return (
     <main>
       {/* bannar part start */}
-      <Banner></Banner>
+      <Banner
+        title="Empowering lives through acts of kindness"
+        des="Re-zanCharity: Uniting hearts, transforming lives, and spreading hope
+          across the globe through acts of kindness. Together, we make the world
+          a better place—one act of compassion at a time."
+        bannerImage={bannerImage}
+      ></Banner>
       {/* bannar part  end*/}
 
       {/* bannar-bottom part start */}
