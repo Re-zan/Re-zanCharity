@@ -4,7 +4,7 @@ import bannerImage from "@/assets/banner/contact.jpg";
 import ContactFrom from "./ContactFrom.jsx";
 //page title
 export const metadata = {
-  title: "Re-zanCharity | Blogs",
+  title: "Re-zanCharity | Contact",
 };
 
 const Contactpage = () => {

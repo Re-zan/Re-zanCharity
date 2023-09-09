@@ -59,7 +59,7 @@ const MeetOurVlouantre = () => {
           data-aos="fade-right"
           data-aos-offset="200"
           data-aos-easing="ease-in-sine"
-          data-aos-duration="600"
+          data-aos-duration="700"
         >
           Meet Our Volunater Team
         </h2>

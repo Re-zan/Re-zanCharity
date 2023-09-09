@@ -22,7 +22,7 @@ const WhoWeAre = () => {
             data-aos="fade-right"
             data-aos-offset="200"
             data-aos-easing="ease-in-sine"
-            data-aos-duration="650"
+            data-aos-duration="750"
           >
             Who We Are
           </h2>
@@ -31,7 +31,7 @@ const WhoWeAre = () => {
             data-aos="fade-right"
             data-aos-offset="200"
             data-aos-easing="ease-in-sine"
-            data-aos-duration="700"
+            data-aos-duration="800"
           >
             We are a dedicated team at Re-zanCharity, driven by compassion,
             working tirelessly to create positive change and support those in
@@ -42,7 +42,7 @@ const WhoWeAre = () => {
             data-aos="fade-right"
             data-aos-offset="200"
             data-aos-easing="ease-in-sine"
-            data-aos-duration="750"
+            data-aos-duration="850"
           >
             <Donatebutton></Donatebutton>
             <div className="ml-5">

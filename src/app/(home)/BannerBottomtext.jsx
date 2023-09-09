@@ -23,7 +23,7 @@ const BannerBottomtext = () => {
           data-aos="fade-down"
           data-aos-offset="200"
           data-aos-easing="ease-in-sine"
-          data-aos-duration="500"
+          data-aos-duration="650"
         >
           At Re-zanCharity, we're dedicated to creating a brighter world by{" "}
           empowering <br></br> hope, fostering kindness, and inspiring positive
@@ -43,7 +43,7 @@ const BannerBottomtext = () => {
           data-aos="fade-up"
           data-aos-offset="200"
           data-aos-easing="ease-in-sine"
-          data-aos-duration="500"
+          data-aos-duration="650"
         >
           Join our compassionate mission today and help us make a lasting{" "}
           <br></br> impact through acts of love and generosity worldwide.

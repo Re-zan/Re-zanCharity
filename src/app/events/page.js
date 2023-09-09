@@ -23,8 +23,8 @@ const Eventpages = async () => {
       <section className=" my-20">
         {/* title part  */}
         <CommonText
-          title="Read Our Blog"
-          description="Explore our insightful articles, stories, and tips. Stay informed and engaged with our mission. Dive into knowledge and inspiration."
+          title="Our Events"
+          description="Discover our exciting events and join us for meaningful experiences that drive positive change. Mark your calendar today!"
           postion="center"
         ></CommonText>
 

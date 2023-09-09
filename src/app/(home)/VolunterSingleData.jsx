@@ -23,14 +23,14 @@ const VolunterSingleData = ({ items }) => {
           data-aos="fade-down"
           data-aos-offset="200"
           data-aos-easing="ease-in-sine"
-          data-aos-duration="700"
+          data-aos-duration="800"
         ></Image>
         <div
           className=" space-y-2 p-3 bg-[#fdfdfd] w-[120px] md:w-[220px] mx-auto  z-30 absolute -bottom-3 md:-bottom-10  left-0 md:left-16 lg:left-9 hover_transtion_effect "
           data-aos="fade-up"
           data-aos-offset="200"
           data-aos-easing="ease-in-sine"
-          data-aos-duration="700"
+          data-aos-duration="800"
         >
           <h3 className={`${pacifico.className} text-2xl text-[#7c276b]`}>
             {name}

@@ -17,7 +17,7 @@ const DonarsSingle = ({ items }) => {
         data-aos="fade-up"
         data-aos-offset="200"
         data-aos-easing="ease-in-sine"
-        data-aos-duration="800"
+        data-aos-duration="820"
       >
         <div className="flex items-center">
           <div>
@@ -41,7 +41,7 @@ const DonarsSingle = ({ items }) => {
         data-aos="fade-up"
         data-aos-offset="200"
         data-aos-easing="ease-in-sine"
-        data-aos-duration="800"
+        data-aos-duration="820"
       />
     </div>
   );

@@ -49,7 +49,7 @@ const MeetOurDonnar = () => {
         data-aos="fade-right"
         data-aos-offset="200"
         data-aos-easing="ease-in-sine"
-        data-aos-duration="600"
+        data-aos-duration="900"
       >
         <h2
           className={`${pacifico.className} text-2xl  md:text-3xl lg:text-5xl text-[#aa3b4c] p-2 `}
