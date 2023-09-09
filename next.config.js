@@ -11,6 +11,26 @@ const nextConfig = {
         protocol: "https",
         hostname: "unsplash.com",
       },
+      {
+        protocol: "https",
+        hostname: "cached.imagescaler.hbpl.co.uk",
+      },
+      {
+        protocol: "https",
+        hostname: "www.letsroam.com",
+      },
+      {
+        protocol: "https",
+        hostname: "www.socialtables.com",
+      },
+      {
+        protocol: "https",
+        hostname: "blog.logox.co.uk",
+      },
+      {
+        protocol: "https",
+        hostname: "media.istockphoto.com",
+      },
     ],
   },
 };

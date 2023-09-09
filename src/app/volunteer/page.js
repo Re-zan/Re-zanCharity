@@ -69,7 +69,7 @@ const VolunteerPage = () => {
 
             <div className=" form-control w-full my-8  rounded-xl border border-[#999999] p-1">
               <input
-                type="text"
+                type="file"
                 placeholder="Enter Your photo url"
                 className="input rounded-none w-full p-4"
                 {...register("photo", { required: true })}
@@ -154,9 +154,9 @@ const VolunteerPage = () => {
             )}
             <button
               type="submit"
-              className=" w-full my-4 py-2 rounded-lg px-3 font-bold bg-[#963682] text-white flex justify-center items-center"
+              className=" w-full my-4 py-3 rounded-lg px-3 font-bold bg-[#963682] text-white flex justify-center items-center"
             >
-              Make Volunteer
+              Be A Volunteer
             </button>
           </form>
         </div>
