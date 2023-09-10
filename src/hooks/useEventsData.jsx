@@ -5,7 +5,7 @@ import useAxios from "./useAxios";
 
 const useEventsData = () => {
   const basicRoute = useAxios();
-  const { data: eventsData = [] } = useQuery({
+  const { data: eventsData = [], refetch } = useQuery({
     queryKey: ["eventsData"],
     queryFn: async () => {
       const data = await basicRoute.get("/events");
@@ -13,7 +13,7 @@ const useEventsData = () => {
     },
   });
 
-  return eventsData;
+  return [eventsData, refetch];
 };
 
 export default useEventsData;

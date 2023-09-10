@@ -30,6 +30,10 @@ const Nabvar = () => {
       path: "/contact",
       title: "Contact",
     },
+    {
+      path: "/dashboard",
+      title: "Dashboard",
+    },
   ];
 
   //active pathname

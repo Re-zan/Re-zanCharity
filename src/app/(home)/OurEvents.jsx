@@ -11,7 +11,8 @@ const OurEvents = () => {
   useEffect(() => {
     AOS.init();
   }, []);
-  const upcomingEvents = useEventsData();
+  const [events] = useEventsData();
+  const upcomingEvents = events.filter((data) => data.status === "upcoming");
 
   return (
     <section className="  my-24  relative ">

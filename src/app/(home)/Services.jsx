@@ -21,28 +21,28 @@ const Services = () => {
       name: "Education Support",
       description:
         "Providing quality education and learning resources to underprivileged children for a brighter future.",
-      icon: <FaBookReader />,
+      icon: FaBookReader,
     },
     {
       id: 2,
       name: "Nutrition Programs",
       description:
         "Ensuring access to nutritious meals and promoting healthy eating habits among kids.",
-      icon: <FaNeos></FaNeos>,
+      icon: FaNeos,
     },
     {
       id: 3,
       name: "Healthcare Services",
       description:
         "Offering medical check-ups, vaccinations, and healthcare assistance for children's well-being.",
-      icon: <FaHandHoldingHeart />,
+      icon: FaHandHoldingHeart,
     },
     {
       id: 4,
       name: "Mentorship Programs",
       description:
         "Pairing kids with caring mentors to inspire, guide, and empower them in life's journey.",
-      icon: <FaPeopleArrows />,
+      icon: FaPeopleArrows,
     },
   ];
 

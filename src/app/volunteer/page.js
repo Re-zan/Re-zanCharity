@@ -7,6 +7,8 @@ import { useEffect } from "react";
 import "aos/dist/aos.css";
 import AOS from "aos";
 import { useForm } from "react-hook-form";
+import useAxios from "@/hooks/useAxios";
+import { Toaster, toast } from "react-hot-toast";
 
 //page title
 export const metadata = {
@@ -19,17 +21,61 @@ const VolunteerPage = () => {
     AOS.init();
   }, []);
 
+  //basicRoute
+  const basicRoute = useAxios();
+
   //form
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    //ImageUpload
+    const imageData = data.photo[0];
+    const formData = new FormData();
+    formData.append("image", imageData);
+    const url = `https://api.imgbb.com/1/upload?key=${process.env.NEXT_PUBLIC_IMAGE}`;
+    fetch(url, {
+      method: "POST",
+      body: formData,
+    })
+      .then((res) => res.json())
+      .then((imgData) => {
+        if (imgData.status === 200) {
+          const imageUrl = imgData.data.display_url;
+
+          //create volunter
+          basicRoute
+            .post("/vlounters", {
+              name: data.name,
+              email: data.email,
+              message: data.message,
+              age: parseInt(data.age),
+              phone_number: data.number,
+              image: imageUrl,
+            })
+            .then((res) => {
+              if (res.data.acknowledged) {
+                reset();
+                toast.success("Your Data Has Been Send Successfully!");
+              }
+            })
+            .catch((error) => {
+              console.log(error.message);
+            });
+        }
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
 
   return (
     <main>
+      <Toaster></Toaster>
       {/* banner part  */}
       <Banner
         title="Join Our Team: Volunteer Opportunities"
