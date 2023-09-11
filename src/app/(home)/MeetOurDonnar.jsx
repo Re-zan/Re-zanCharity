@@ -66,7 +66,7 @@ const MeetOurDonnar = () => {
       >
         <div className="my_container">
           {" "}
-          {donors.map((items) => (
+          {donors?.map((items) => (
             <DonarsSingle items={items} key={items.id}></DonarsSingle>
           ))}
         </div>

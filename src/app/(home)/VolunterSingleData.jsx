@@ -15,16 +15,19 @@ const VolunterSingleData = ({ items }) => {
   return (
     <>
       <div className=" relative text-center  p-4  shadow-lg mt-5 md:mt-0 z-0 ">
-        <Image
-          src={image}
-          alt="Our Team "
-          width={500}
-          height={500}
-          data-aos="fade-down"
-          data-aos-offset="200"
-          data-aos-easing="ease-in-sine"
-          data-aos-duration="800"
-        ></Image>
+        {image && (
+          <Image
+            src={image}
+            alt="Our Team "
+            width={500}
+            height={500}
+            data-aos="fade-down"
+            data-aos-offset="200"
+            data-aos-easing="ease-in-sine"
+            data-aos-duration="800"
+          ></Image>
+        )}
+
         <div
           className=" space-y-2 p-3 bg-[#fdfdfd] w-[120px] md:w-[220px] mx-auto  z-30 absolute -bottom-3 md:-bottom-10  left-0 md:left-16 lg:left-9 hover_transtion_effect "
           data-aos="fade-up"

@@ -12,8 +12,8 @@ export const metadata = {
 
 const Eventpages = async () => {
   const data = await getEventData();
-  const eventsData = data.filter(
-    (data) => data.status === "upcoming" || data.status === "canceled"
+  const eventsData = data?.filter(
+    (data) => data?.status === "upcoming" || data?.status === "canceled"
   );
   return (
     <main>

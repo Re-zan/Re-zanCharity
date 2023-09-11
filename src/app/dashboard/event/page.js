@@ -1,10 +1,10 @@
 "use client";
 import useEventsData from "@/hooks/useEventsData";
-import React from "react";
+import React, { useRef, useState } from "react";
 import EventTable from "./EventTable";
 import { Toaster } from "react-hot-toast";
-import useAxios from "@/hooks/useAxios";
 import MakeEventFrom from "./MakeEventFrom";
+import EventModal from "@/components/modals/EventModal";
 
 export const metadata = {
   title: " Dashboard | Events",
@@ -12,13 +12,25 @@ export const metadata = {
 const EventPage = () => {
   const [eventsData, refetch] = useEventsData();
 
+  //satates
+  const [updateData, setUpdateData] = useState(null);
+  //modal
+  const modalRef = useRef(null);
+  const openModal = (item) => {
+    setUpdateData(item);
+    modalRef.current.showModal();
+  };
+  const closeModal = () => {
+    setUpdateData(null);
+    modalRef.current.close();
+  };
+
   return (
     <div className="max-w-screen-xl  px-4 md:px-8">
-      <div className="max-w-lg">
-        <h3 className="text-[#aa3b4c] text-xl font-bold sm:text-2xl ">
+      <div className="max-w-lg mx-0 lg:mx-auto">
+        <h3 className="text-[#aa3b4c] text-xl font-bold sm:text-2xl py-3">
           Our Events
         </h3>
-        <p>difuuuuuuuuuuuh</p>
         <MakeEventFrom refetch={refetch}></MakeEventFrom>
       </div>
       <div className="mt-8 shadow-sm border rounded-lg overflow-x-auto w-[200px] md:w-[500px] lg:w-[1100px]">
@@ -48,10 +60,19 @@ const EventPage = () => {
                 key={item._id}
                 idx={idx}
                 refetch={refetch}
+                openModal={openModal}
               ></EventTable>
             ))}
           </tbody>
         </table>
+        <EventModal
+          modalRef={modalRef}
+          closeModal={closeModal}
+          updateData={updateData}
+          refetch={refetch}
+        >
+          {" "}
+        </EventModal>
       </div>
     </div>
   );

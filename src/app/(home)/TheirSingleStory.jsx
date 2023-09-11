@@ -3,7 +3,7 @@ import React from "react";
 import { pacifico, zila } from "@/utils/fonts";
 
 const TheirSingleStory = ({ items }) => {
-  const { name, age, story } = items;
+  const { name, story } = items;
   return (
     <div className="pb-6 md:pb-0">
       {" "}

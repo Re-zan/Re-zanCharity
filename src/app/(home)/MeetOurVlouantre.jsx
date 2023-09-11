@@ -18,7 +18,7 @@ const MeetOurVlouantre = () => {
   //voluanterrsData
   const [voluanterrsData] = useVolunteerData();
   const onlyVoluanteers = voluanterrsData
-    .filter((data) => data.role === "voluanteer")
+    .filter((data) => data?.role === "voluanteer")
     .slice(0, 4);
 
   return (
@@ -39,7 +39,7 @@ const MeetOurVlouantre = () => {
           Meet Our Volunater Team
         </h2>
         <div className="grid  grid-cols-2 lg:grid-cols-4 gap-10 p-3 lg:p-0 my-12">
-          {onlyVoluanteers.map((items) => (
+          {onlyVoluanteers?.map((items) => (
             <VolunterSingleData
               items={items}
               key={items.id}

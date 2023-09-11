@@ -1,7 +1,9 @@
 import axios from "axios";
 
 const getSingleEventsData = async (id) => {
-  const res = await axios(`http://localhost:5000/events/${id}`);
+  const res = await axios(
+    `https://re-zancharity-server-side.vercel.app/events/${id}`
+  );
   return res.data;
 };
 

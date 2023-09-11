@@ -3,7 +3,7 @@ import Image from "next/image";
 import React from "react";
 import { toast } from "react-hot-toast";
 
-const EventTable = ({ item, idx, refetch }) => {
+const EventTable = ({ item, idx, refetch, openModal }) => {
   //basic route
   const basicRoute = useAxios();
   //data
@@ -63,7 +63,15 @@ const EventTable = ({ item, idx, refetch }) => {
       <tr key={idx} className="text-center">
         <td className="pr-6 py-4 whitespace-nowrap">{++idx}</td>
         <td className="pr-6 py-4 whitespace-nowrap">
-          <Image src={image} alt={title} width={50} height={50}></Image>
+          {image && (
+            <Image
+              src={image}
+              alt={title}
+              width={50}
+              height={50}
+              layout="responsive"
+            ></Image>
+          )}
         </td>
         <td className="pr-6 py-4 whitespace-nowrap">{title}</td>
         <td className="pr-6 py-4 whitespace-nowrap w-28 h-14">
@@ -98,6 +106,12 @@ const EventTable = ({ item, idx, refetch }) => {
         </td>
 
         <td className="text-right whitespace-nowrap">
+          <button
+            className="py-2 leading-none px-3 font-medium text-sky-600 hover:text-red-500 duration-150 hover:bg-gray-50 rounded-lg"
+            onClick={() => openModal(item)}
+          >
+            update
+          </button>
           <button
             className="py-2 leading-none px-3 font-medium text-red-600 hover:text-red-500 duration-150 hover:bg-gray-50 rounded-lg"
             onClick={() => handleDelete(_id)}

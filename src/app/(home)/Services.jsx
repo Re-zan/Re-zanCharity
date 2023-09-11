@@ -63,7 +63,7 @@ const Services = () => {
         data-aos-easing="ease-in-sine"
         data-aos-duration="500"
       >
-        {services.map((items) => (
+        {services?.map((items) => (
           <SingleService items={items} key={items.id}></SingleService>
         ))}
       </div>

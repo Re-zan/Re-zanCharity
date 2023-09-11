@@ -34,7 +34,9 @@ const DonarsSingle = ({ items }) => {
             <p className={`${pacifico.zila}  text-md`}>Age: {age}</p>
           </div>
         </div>
-        <Image alt="Donars" src={image} width={90} height={50}></Image>
+        {image && (
+          <Image alt="Donars" src={image} width={90} height={50}></Image>
+        )}
       </div>
       <hr
         className=" bg-white my-4"

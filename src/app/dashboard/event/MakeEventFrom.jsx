@@ -55,20 +55,20 @@ const MakeEventFrom = ({ refetch }) => {
       });
   };
   return (
-    <section className=" my-20">
+    <section>
       {/* title part  */}
       <Toaster></Toaster>
 
       {/* form start */}
-      <div className="my-10 w-[300px] md:w-[500px] mx-auto">
+      <div className="mb-10 w-[300px] md:w-[500px] mx-auto">
         {" "}
         <form onSubmit={handleSubmit(onSubmit)}>
           {/* title */}
-          <div className=" form-control w-full my-8  rounded-xl border border-[#999999] p-1">
+          <div className=" form-control w-full  rounded-xl border border-[#999999] p-1">
             <input
               type="text"
               placeholder="Enter Your Event title"
-              className="input rounded-none w-full p-4"
+              className="input rounded-none w-full p-2"
               {...register("title", { required: true })}
             />
           </div>
@@ -80,11 +80,11 @@ const MakeEventFrom = ({ refetch }) => {
 
           {/* photo */}
 
-          <div className=" form-control w-full my-8  rounded-xl border border-[#999999] p-1">
+          <div className=" form-control w-full my-6  rounded-xl border border-[#999999] p-1">
             <input
               type="file"
               placeholder="Enter Your photo url"
-              className="input rounded-none w-full p-4"
+              className="input rounded-none w-full p-2"
               {...register("photo", { required: true })}
             />
           </div>
@@ -97,11 +97,11 @@ const MakeEventFrom = ({ refetch }) => {
 
           {/* short_title  */}
 
-          <div className=" form-control w-full my-8  rounded-xl border border-[#999999] p-1">
+          <div className=" form-control w-full my-6  rounded-xl border border-[#999999] p-1">
             <input
               type="text"
               placeholder="Enter Your short_title"
-              className="input rounded-none w-full p-4 "
+              className="input rounded-none w-full p-2 "
               {...register("short_title", { required: true })}
             />
           </div>
@@ -113,13 +113,13 @@ const MakeEventFrom = ({ refetch }) => {
 
           {/* date  */}
 
-          <div className=" form-control w-full my-8  rounded-xl border border-[#999999] p-1">
+          <div className=" form-control w-full my-6  rounded-xl border border-[#999999] p-1">
             <input
               type="data"
               min="2018-01-01"
               max="2050-12-31"
               placeholder="Enter Your date"
-              className="input rounded-none w-full p-4 "
+              className="input rounded-none w-full p-2 "
               {...register("date", { required: true })}
             />
           </div>
@@ -131,11 +131,11 @@ const MakeEventFrom = ({ refetch }) => {
 
           {/* location  */}
 
-          <div className=" form-control w-full my-8  rounded-xl border border-[#999999] p-1">
+          <div className=" form-control w-full my-6  rounded-xl border border-[#999999] p-1">
             <input
               type="text"
               placeholder="Enter Your location"
-              className="input rounded-none w-full p-4 "
+              className="input rounded-none w-full p-2 "
               {...register("location", { required: true })}
             />
           </div>
@@ -145,9 +145,9 @@ const MakeEventFrom = ({ refetch }) => {
             </p>
           )}
 
-          <div className=" form-control w-full my-8  rounded-xl border border-[#999999] p-1">
+          <div className=" form-control w-full my-4  rounded-xl border border-[#999999] p-1">
             <textarea
-              className="input rounded-none w-full p-4"
+              className="input rounded-none w-full p-2"
               {...register("description", { required: true })}
             ></textarea>
           </div>

@@ -37,7 +37,7 @@ const OurSponsers = () => {
 
         {/* our sponsers part */}
         <div className="md:flex justify-around items-center my-14 ">
-          {sponsers.map(({ image, id }) => (
+          {sponsers?.map(({ image, id }) => (
             <Image
               src={image}
               alt="Our Friends & Sponsers"

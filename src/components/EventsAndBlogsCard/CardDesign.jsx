@@ -14,24 +14,28 @@ const CardDesign = ({ items }) => {
   }, []);
 
   const pathName = usePathname();
-  const { _id, title, image, short_title } = items;
+  const { _id, title, image } = items;
   return (
     <>
       {" "}
       {pathName === "/blogs" && (
         <Link href={`/blogs/${_id}`}>
           <div className=" relative text-center  p-4  shadow-lg my-10 md:mt-0 z-0 ">
-            <Image
-              src={image}
-              alt="Our Team "
-              width={800}
-              height={500}
-              className=" object-cover w-full  h-56"
-              data-aos="fade-down"
-              data-aos-offset="200"
-              data-aos-easing="ease-in-sine"
-              data-aos-duration="700"
-            ></Image>
+            {image && (
+              <Image
+                src={image}
+                layout="responsive"
+                alt="Our Team "
+                width={800}
+                height={500}
+                className=" object-cover w-full  h-56"
+                data-aos="fade-down"
+                data-aos-offset="200"
+                data-aos-easing="ease-in-sine"
+                data-aos-duration="700"
+              ></Image>
+            )}
+
             <div
               className=" space-y-2 p-3 bg-[#fdfdfd] w-[120px] md:w-[220px] mx-auto  z-30 absolute -bottom-3 md:-bottom-10  left-0 md:left-16 lg:left-9 hover_transtion_effect "
               data-aos="fade-up"
@@ -49,17 +53,20 @@ const CardDesign = ({ items }) => {
       {pathName === "/events" && (
         <Link href={`/events/${_id}`}>
           <div className=" relative text-center  p-4  shadow-lg my-10 md:mt-0 z-0 ">
-            <Image
-              src={image}
-              alt="Our Team "
-              width={800}
-              height={500}
-              className=" object-cover w-full  h-56"
-              data-aos="fade-down"
-              data-aos-offset="200"
-              data-aos-easing="ease-in-sine"
-              data-aos-duration="700"
-            ></Image>
+            {image && (
+              <Image
+                src={image}
+                layout="responsive"
+                alt="Our Team "
+                width={800}
+                height={500}
+                className=" object-cover w-full  h-56"
+                data-aos="fade-down"
+                data-aos-offset="200"
+                data-aos-easing="ease-in-sine"
+                data-aos-duration="700"
+              ></Image>
+            )}
             <div
               className=" space-y-2 p-3 bg-[#fdfdfd] w-[120px] md:w-[220px] mx-auto  z-30 absolute -bottom-3 md:bottom-8  left-0 md:left-16 lg:left-9 hover_transtion_effect "
               data-aos="fade-up"
