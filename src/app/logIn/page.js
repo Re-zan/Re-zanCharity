@@ -1,7 +1,19 @@
+import CommonText from "@/components/CommonText";
 import React from "react";
+import LogFromData from "./LogFromData";
 
-const page = () => {
-  return <div>dfpho</div>;
+//page title
+export const metadata = {
+  title: "Re-zanCharity | LogIn",
 };
 
-export default page;
+const LogInpage = () => {
+  return (
+    <section className="my-20 shadow-2xl my_container py-16">
+      <CommonText title="LogIn Now" postion="center"></CommonText>
+      <LogFromData></LogFromData>
+    </section>
+  );
+};
+
+export default LogInpage;

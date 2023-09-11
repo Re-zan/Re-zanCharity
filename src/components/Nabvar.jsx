@@ -1,15 +1,47 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Image from "next/image";
 import logoImg from "@/assets/logo.png";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { AuthContext } from "@/Provider/AuthProviders";
 
 const Nabvar = () => {
+  //user
+  const { user, logOut } = useContext(AuthContext);
+
+  //logout
+  const handleLogOut = () => {
+    logOut();
+  };
+  //states
   const [state, setState] = useState(false);
 
   // main menu create
-  const mainMenu = [
+  const beforeLogINMenu = [
+    {
+      path: "/",
+      title: "Home",
+    },
+    {
+      path: "/causes",
+      title: "Causes",
+    },
+    {
+      path: "/events",
+      title: "Events",
+    },
+    {
+      path: "/blogs",
+      title: "Blogs",
+    },
+    {
+      path: "/contact",
+      title: "Contact",
+    },
+  ];
+
+  const afterLogInMenu = [
     {
       path: "/",
       title: "Home",
@@ -35,6 +67,8 @@ const Nabvar = () => {
       title: "Dashboard",
     },
   ];
+
+  const mainMenu = user ? afterLogInMenu : beforeLogINMenu;
 
   //active pathname
   const pathname = usePathname();
@@ -118,7 +152,7 @@ const Nabvar = () => {
             } `}
           >
             <ul className="flex-1 justify-end items-center space-y-6 md:flex md:space-x-6 md:space-y-0">
-              {mainMenu.map(({ path, title }) => {
+              {mainMenu?.map(({ path, title }) => {
                 const isActive = pathname === path;
                 return (
                   <li key={path} className={`font-semibold text-[17px] `}>
@@ -136,24 +170,45 @@ const Nabvar = () => {
                 );
               })}
               <li>
-                <Link
-                  href="/logIn"
-                  className="flex items-center justify-center gap-x-1 py-2 px-4 text-white font-medium bg-[#702461] active:bg-[#702461] duration-150 rounded-full md:inline-flex"
-                >
-                  LogIn
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                    className="w-5 h-5"
+                {user ? (
+                  <button
+                    onClick={handleLogOut}
+                    className="flex items-center justify-center gap-x-1 py-2 px-4 text-white font-medium bg-[#702461] active:bg-[#702461] duration-150 rounded-full md:inline-flex"
                   >
-                    <path
-                      fillRule="evenodd"
-                      d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                </Link>
+                    LogOut
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      className="w-5 h-5"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </button>
+                ) : (
+                  <Link
+                    href="/logIn"
+                    className="flex items-center justify-center gap-x-1 py-2 px-4 text-white font-medium bg-[#702461] active:bg-[#702461] duration-150 rounded-full md:inline-flex"
+                  >
+                    LogIn
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      className="w-5 h-5"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </Link>
+                )}
               </li>
             </ul>
           </div>
