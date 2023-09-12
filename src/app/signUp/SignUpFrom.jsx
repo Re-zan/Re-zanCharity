@@ -6,12 +6,16 @@ import Link from "next/link";
 import useAuth from "@/hooks/useAuth";
 import { toast, Toaster } from "react-hot-toast";
 import GoogleLogIn from "@/components/GoogleLogIn";
+import { useRouter } from "next/navigation";
 
 const SignUpFrom = () => {
   //login route
   const logInRoute = "/logIn";
   //basicRoute
   const basicRoute = useAxios();
+
+  //navigate
+  const router = useRouter();
 
   //authData
   const { createUser, profile } = useAuth();
@@ -61,6 +65,7 @@ const SignUpFrom = () => {
                 .then((res) => {
                   if (res.data.acknowledged) {
                     reset();
+                    router.push("/");
                     toast.success("Reagistration succesffull");
                   }
                 })

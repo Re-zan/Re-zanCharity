@@ -1,7 +1,7 @@
 import useAxios from "@/hooks/useAxios";
 import Image from "next/image";
 import React from "react";
-import toast, { Toaster } from "react-hot-toast";
+import { toast, Toaster } from "react-hot-toast";
 
 const TableContent = ({ item, idx, refetch }) => {
   const { _id, name, email, message, age, phone_number, image, role } = item;
@@ -24,7 +24,8 @@ const TableContent = ({ item, idx, refetch }) => {
     <tr key={idx}>
       <Toaster></Toaster>
       <td className="flex items-center gap-x-3 py-3 px-6 whitespace-nowrap">
-        <Image src={image} alt={name} width={50} height={50}></Image>
+        {image && <Image src={image} alt={name} width={50} height={50}></Image>}
+
         <div>
           <span className="block text-gray-700 text-sm font-medium">
             {name}
@@ -32,6 +33,7 @@ const TableContent = ({ item, idx, refetch }) => {
           <span className="block text-gray-700 text-xs">{email}</span>
         </div>
       </td>
+
       <td className="px-6 py-4 whitespace-nowrap">{phone_number}</td>
       <td className="px-6 py-4 whitespace-nowrap">{age}</td>
       <td className="px-6 py-4 whitespace-nowrap">{message}</td>

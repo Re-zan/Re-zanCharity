@@ -1,3 +1,4 @@
+"use client";
 import useAuth from "@/hooks/useAuth";
 import useAxios from "@/hooks/useAxios";
 import { useRouter } from "next/navigation";
@@ -23,7 +24,7 @@ const GoogleLogIn = () => {
             name: user.displayName,
             email: user.email,
           })
-          .then((res) => res.data)
+          .then((res) => router.push("/"))
           .catch((error) => {
             console.log(error.message);
           });

@@ -5,10 +5,14 @@ import Link from "next/link";
 import GoogleLogIn from "@/components/GoogleLogIn";
 import { toast, Toaster } from "react-hot-toast";
 import useAuth from "@/hooks/useAuth";
+import { useRouter } from "next/navigation";
 
 const LogFromData = () => {
   //signUp
   const signUp = "/signUp";
+
+  //navigate
+  const router = useRouter();
 
   //authData
   const { logIn } = useAuth();
@@ -25,6 +29,7 @@ const LogFromData = () => {
     logIn(data.email, data.password)
       .then(() => {
         reset();
+        router.push("/");
         toast.success("LogIn succesffull");
       })
       .catch((error) => {

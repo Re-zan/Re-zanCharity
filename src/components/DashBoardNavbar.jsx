@@ -14,6 +14,10 @@ const DashBoardNavbar = () => {
       path: "/dashboard/voluanteer",
       title: "Voluanteer",
     },
+    {
+      path: "/dashboard/users",
+      title: "Users",
+    },
   ];
 
   //isactive pathname
