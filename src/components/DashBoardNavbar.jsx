@@ -2,10 +2,14 @@
 import { usePathname } from "next/navigation";
 import React from "react";
 import Link from "next/link";
+import useAdmin from "@/hooks/useAdmin";
 
 const DashBoardNavbar = () => {
+  const [isAdmin] = useAdmin();
+  console.log(isAdmin?.role);
+
   // main menu create
-  const mainMenu = [
+  const adminMenu = [
     {
       path: "/dashboard/event",
       title: "Event",
@@ -19,6 +23,15 @@ const DashBoardNavbar = () => {
       title: "Users",
     },
   ];
+
+  const donarMenu = [
+    {
+      path: "/dashboard/donate",
+      title: "Donate",
+    },
+  ];
+
+  const mainMenu = isAdmin?.role === "admin" ? adminMenu : donarMenu;
 
   //isactive pathname
   const pathname = usePathname();

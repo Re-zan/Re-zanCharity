@@ -40,9 +40,9 @@ const MakeEventFrom = ({ refetch }) => {
             })
             .then((res) => {
               if (res.data.acknowledged) {
+                toast.success("Your Data Has Been Send Successfully!");
                 reset();
                 refetch();
-                toast.success("Your Data Has Been Send Successfully!");
               }
             })
             .catch((error) => {

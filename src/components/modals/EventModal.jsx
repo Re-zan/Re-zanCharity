@@ -15,18 +15,19 @@ const EventModal = ({ closeModal, updateData, refetch, modalRef }, ref) => {
   const onSubmit = (data) => {
     //update events
     basicRoute
-      .put(`/events/${updateData?._id}`, {
+      .patch(`/events/${updateData?._id}`, {
         title: data.title,
         short_title: data.short_title,
         description: data.description,
         location: data.location,
         date: data.date,
+        image: data?.photo,
       })
       .then((res) => {
         if (res.data.modifiedCount > 0) {
+          toast.success("Your Data Has Been Updated Successfully!");
           reset();
           refetch();
-          toast.success("Your Data Has Been Updated Successfully!");
         }
       })
       .catch((error) => {
@@ -118,7 +119,7 @@ const EventModal = ({ closeModal, updateData, refetch, modalRef }, ref) => {
         </div>
 
         {/* photo */}
-        {/* <div className=" form-control w-full my-8  rounded-xl border border-[#999999] p-1">
+        <div className=" form-control w-full my-8  rounded-xl border border-[#999999] p-1">
           <input
             type="file"
             placeholder="Enter Your photo url"
@@ -134,7 +135,7 @@ const EventModal = ({ closeModal, updateData, refetch, modalRef }, ref) => {
               layout="responsive"
             ></Image>
           )}
-        </div> */}
+        </div>
         {/* short_title  */}
         <div className=" form-control w-full my-8  rounded-xl border border-[#999999] p-1">
           <input

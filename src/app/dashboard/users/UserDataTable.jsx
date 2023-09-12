@@ -1,3 +1,4 @@
+import useAdmin from "@/hooks/useAdmin";
 import useAxios from "@/hooks/useAxios";
 import Image from "next/image";
 import React from "react";
@@ -15,8 +16,8 @@ const UserDataTable = ({ item, idx, refetch }) => {
       .put(`/users/admin/${_id}`)
       .then((res) => {
         if (res.data.modifiedCount > 0) {
-          refetch();
           toast.success(`${name} is now Admin`);
+          refetch();
         }
       })
       .catch((error) => console.log(error.message));
