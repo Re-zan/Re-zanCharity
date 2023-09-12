@@ -1,3 +1,5 @@
+import UserTable from "./UserTable";
+
 export const metadata = {
   title: " Dashboard | Users",
 };
@@ -9,6 +11,7 @@ const UsersPage = () => {
           Our Users
         </h3>
       </div>
+      <UserTable></UserTable>
     </div>
   );
 };
