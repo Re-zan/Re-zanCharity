@@ -22,6 +22,10 @@ const DashBoardNavbar = () => {
       path: "/dashboard/users",
       title: "Users",
     },
+    {
+      path: "/dashboard/donate",
+      title: "Donate",
+    },
   ];
 
   const donarMenu = [
