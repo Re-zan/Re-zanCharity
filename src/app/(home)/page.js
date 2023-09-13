@@ -10,7 +10,6 @@ import MeetOurVlouantre from "./MeetOurVlouantre";
 import TheirStory from "./TheirStory";
 import bannerImage from "@/assets/banner/Charity_Hands_bg.jpg";
 
-export const revalidate = 0;
 const Homepage = () => {
   return (
     <main>
