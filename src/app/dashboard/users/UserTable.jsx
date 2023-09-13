@@ -2,20 +2,19 @@
 import React from "react";
 import useUsersData from "@/hooks/useUsersData";
 import UserDataTable from "./UserDataTable";
-import useAuth from "@/hooks/useAuth";
 
 const UserTable = () => {
   const [userDatas, refetch] = useUsersData();
-  const { user } = useAuth();
+
   // console.log(user);
   return (
-    <div className="mt-8 shadow-sm border rounded-lg overflow-x-auto w-[200px] md:w-[500px] lg:w-[1000px]">
+    <div className="mt-8 shadow-sm border rounded-lg overflow-x-auto w-[200px] md:w-[500px] lg:w-[1100px]">
       <table className="w-full table-auto text-sm text-left">
         <thead className="bg-gray-50 text-gray-600 font-medium border-b text-center">
           {/* heading  */}
           <tr>
             <th className="py-3 px-6">User</th>
-            <th className="py-3 px-6">Age</th>
+
             <th className="py-3 px-6">Doanted</th>
             <th className="py-3 px-6">Meassage</th>
             <th className="py-3 px-6">Role</th>

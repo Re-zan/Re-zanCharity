@@ -6,7 +6,6 @@ import useAdmin from "@/hooks/useAdmin";
 
 const DashBoardNavbar = () => {
   const [isAdmin] = useAdmin();
-  console.log(isAdmin?.role);
 
   // main menu create
   const adminMenu = [

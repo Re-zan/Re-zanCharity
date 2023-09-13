@@ -16,6 +16,7 @@ const VoluanteerTable = () => {
             <th className="py-3 px-6">Age</th>
             <th className="py-3 px-6">Meassage</th>
             <th className="py-3 px-6">Role</th>
+            <th className="py-3 px-6">Action</th>
           </tr>
         </thead>
         <tbody className="text-gray-600 divide-y">

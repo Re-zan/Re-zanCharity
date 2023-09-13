@@ -3,10 +3,14 @@ import React from "react";
 import { Toaster, toast } from "react-hot-toast";
 import { useForm } from "react-hook-form";
 import useAxios from "@/hooks/useAxios";
+import useAuth from "@/hooks/useAuth";
 
 const DonateForm = () => {
   //route
   const basicRoute = useAxios();
+
+  //user
+  const { user } = useAuth();
   //form
   const {
     register,
@@ -15,7 +19,38 @@ const DonateForm = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    console.log(data);
+    basicRoute.get(`/users/${user?.email}`).then((res) => {
+      if (res.data.donation_amount) {
+        const total = res.data.donation_amount + parseInt(data.donation_amount);
+        //donate
+        basicRoute
+          .patch(`/users/donated/${user?.email}`, {
+            donation_amount: total,
+            message: data.message,
+          })
+          .then((res) => {
+            if (res.data.modifiedCount > 0) {
+              reset();
+              toast.success(
+                `Thank you for your donation and your total donation is $ ${total}`
+              );
+            }
+          });
+      } else {
+        //donate
+        basicRoute
+          .patch(`/users/donated/${user?.email}`, {
+            donation_amount: parseInt(data.donation_amount),
+            message: data.message,
+          })
+          .then((res) => {
+            if (res.data.modifiedCount > 0) {
+              reset();
+              toast.success(`Thank you for your donation`);
+            }
+          });
+      }
+    });
   };
   return (
     <section>
@@ -26,8 +61,6 @@ const DonateForm = () => {
       <div className="mb-10 w-[300px] md:w-[500px] mx-auto">
         {" "}
         <form onSubmit={handleSubmit(onSubmit)}>
-          {/* title */}
-
           {/* danated  */}
 
           <div className=" form-control w-full my-6  rounded-xl border border-[#999999] p-1">
@@ -35,10 +68,10 @@ const DonateForm = () => {
               type="number"
               placeholder="Enter Your Amount"
               className="input rounded-none w-full p-2 "
-              {...register("doanted", { required: true })}
+              {...register("donation_amount", { required: true })}
             />
           </div>
-          {errors.doanted?.type === "required" && (
+          {errors.donation_amount?.type === "required" && (
             <p className=" text-red-800 text-center py-1">
               This feild cann't be empty
             </p>

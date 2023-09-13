@@ -5,7 +5,7 @@ import React from "react";
 import { toast, Toaster } from "react-hot-toast";
 
 const UserDataTable = ({ item, idx, refetch }) => {
-  const { _id, name, email, message, age, image, role, doanted } = item;
+  const { _id, name, email, message, image, role, donation_amount } = item;
 
   //serverRoute
   const basicRoute = useAxios();
@@ -34,6 +34,21 @@ const UserDataTable = ({ item, idx, refetch }) => {
       })
       .catch((error) => console.log(error.message));
   };
+
+  //delete item
+  const handleDelete = (_id) => {
+    basicRoute
+      .delete(`/users/${_id}`)
+      .then((res) => {
+        if (res.data.deletedCount > 0) {
+          toast.success(`Data is deleted`);
+          refetch();
+        }
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
   return (
     <tr key={idx}>
       <Toaster></Toaster>
@@ -48,11 +63,14 @@ const UserDataTable = ({ item, idx, refetch }) => {
         </div>
       </td>
 
-      <td className="px-6 py-4 whitespace-nowrap">{age}</td>
-      <td className="px-6 py-4 whitespace-nowrap">{doanted} $ 0</td>
+      <td className="px-6 py-4 whitespace-nowrap">
+        $ {donation_amount ? donation_amount : 0}{" "}
+      </td>
 
       <td className="px-6 py-4 whitespace-nowrap">
-        {message} || yufggggggggggggggggggggg
+        <textarea className=" h-14" value={message ? message : "............."}>
+          {" "}
+        </textarea>
       </td>
 
       <td className="text-right px-6 whitespace-nowrap">
@@ -61,7 +79,7 @@ const UserDataTable = ({ item, idx, refetch }) => {
 
       <td className="px-6 py-4 whitespace-nowrap">
         <button
-          className="py-2 leading-none px-3 font-medium text-red-600 hover:text-red-500 duration-150 hover:bg-gray-50 rounded-lg"
+          className="py-2 leading-none px-3 font-medium text-purple-600 hover:text-purple-500 duration-150 hover:bg-gray-50 rounded-lg"
           onClick={() => handleMakeAdmin(_id)}
         >
           Make Admin
@@ -71,6 +89,12 @@ const UserDataTable = ({ item, idx, refetch }) => {
           onClick={() => handleMakeDonar(_id)}
         >
           Make Donar
+        </button>
+        <button
+          className="py-2 leading-none px-3 font-medium text-red-600 hover:text-red-500 duration-150 hover:bg-gray-50 rounded-lg"
+          onClick={() => handleDelete(_id)}
+        >
+          Delete
         </button>
       </td>
     </tr>
