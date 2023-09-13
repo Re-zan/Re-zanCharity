@@ -1,15 +1,15 @@
-"use client";
 import React from "react";
 import OurSingleEvents from "./OurSingleEvents";
 
-import useEventsData from "@/hooks/useEventsData";
+// import useEventsData from "@/hooks/useEventsData";
 import OurEventHeading from "./OurEventHeading";
-// import getEventData from "@/utils/getEventData";
+import getEventData from "@/utils/getEventData";
 
-const OurEvents = () => {
-  const [events] = useEventsData();
+export const revalidate = 0;
+const OurEvents = async () => {
+  // const [events] = useEventsData();
 
-  // const events = await getEventData();
+  const events = await getEventData();
   const upcomingEvents = events?.filter((data) => data?.status === "upcoming");
 
   return (
