@@ -26,7 +26,7 @@ const DonarsSingle = ({ items }) => {
               Name: {name}
             </h2>
             <p
-              className={`${pacifico.zila}  hidden lg:block text-md w-[840px]`}
+              className={`${pacifico.zila}  hidden lg:block text-md w-[750px]`}
             >
               {message}
             </p>
