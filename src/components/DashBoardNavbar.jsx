@@ -29,6 +29,10 @@ const DashBoardNavbar = () => {
 
   const donarMenu = [
     {
+      path: "/dashboard/feedback",
+      title: "Feedback",
+    },
+    {
       path: "/dashboard/donate",
       title: "Donate",
     },
