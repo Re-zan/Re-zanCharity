@@ -12,8 +12,6 @@ const CheckOutFrom = () => {
 
   //states
   const [errosShow, setErrosShow] = useState();
-  const [clientSecret, setClientSecret] = useState("");
-  const [transactionId, setTransactionId] = useState("");
 
   //route
   const basicRoute = useAxios();
@@ -38,7 +36,6 @@ const CheckOutFrom = () => {
       })
       .then((res) => {
         const receivedClientSecret = res.data.clientSecret;
-        setClientSecret(receivedClientSecret); // Check if you receive the clientSecret
 
         if (!receivedClientSecret) {
           // Handle the case where the clientSecret is missing or invalid
@@ -70,7 +67,6 @@ const CheckOutFrom = () => {
             } else {
               setErrosShow("");
 
-              // After creating PaymentMethod, you can proceed with confirming the payment
               stripe
                 .confirmCardPayment(receivedClientSecret, {
                   payment_method: result.paymentMethod.id,
@@ -79,9 +75,8 @@ const CheckOutFrom = () => {
                   if (confirmationResult.error) {
                     console.log("[error]", confirmationResult.error);
                   } else {
-                    // Payment succeeded, handle success here
+                    // Payment succeeded
                     console.log(confirmationResult.paymentIntent);
-                    setTransactionId(confirmationResult.paymentIntent.id);
 
                     // Make a request to your server to update user data with donation
                     if (
@@ -121,6 +116,17 @@ const CheckOutFrom = () => {
                             });
                         }
                       });
+
+                      //payments saved to the db
+                      basicRoute
+                        .post("/payments", {
+                          paymentId: confirmationResult.paymentIntent.id,
+                          name: user?.displayName,
+                          email: user?.email,
+                          image: user?.photoURL,
+                          amount: parseFloat(data?.donation_amount),
+                        })
+                        .then((res) => res.data);
                     }
                   }
                 });

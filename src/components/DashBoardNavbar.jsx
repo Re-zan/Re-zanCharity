@@ -25,6 +25,10 @@ const DashBoardNavbar = () => {
       path: "/dashboard/donate",
       title: "Donate",
     },
+    {
+      path: "/dashboard/donateHistory",
+      title: "Donate History",
+    },
   ];
 
   const donarMenu = [
@@ -35,6 +39,10 @@ const DashBoardNavbar = () => {
     {
       path: "/dashboard/donate",
       title: "Donate",
+    },
+    {
+      path: "/dashboard/donateHistory",
+      title: "Donate History",
     },
   ];
 
