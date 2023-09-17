@@ -3,7 +3,6 @@ import React from "react";
 import { Toaster, toast } from "react-hot-toast";
 import { useForm } from "react-hook-form";
 import useAxios from "@/hooks/useAxios";
-import useAuth from "@/hooks/useAuth";
 
 const FeedbackFrom = () => {
   //form
@@ -64,7 +63,7 @@ const FeedbackFrom = () => {
             type="submit"
             className=" w-full my-4 py-3 rounded-lg px-3 font-bold bg-[#963682] text-white flex justify-center items-center"
           >
-            Donate Now
+            Give Your FeedBack
           </button>
         </form>
       </div>
