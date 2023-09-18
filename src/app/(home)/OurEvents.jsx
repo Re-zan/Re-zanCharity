@@ -21,7 +21,7 @@ const OurEvents = () => {
           clipPath: "polygon(0% 3%, 54% 3%, 100% 100%, 0% 100%)",
         }}
       >
-        <div className="my_container py-10 pl-2 lg:pl-0 text-white">
+        <div className="my_container py-10 pl-2 2xl:pl-0 text-white">
           {upcomingEvents?.slice(0, 3).map((items) => (
             <OurSingleEvents items={items} key={items._id}></OurSingleEvents>
           ))}

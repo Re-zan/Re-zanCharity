@@ -29,7 +29,7 @@ const VolunterSingleData = ({ items }) => {
         )}
 
         <div
-          className=" space-y-2 p-3 bg-[#fdfdfd] w-[120px] md:w-[220px] mx-auto  z-30 absolute -bottom-3 md:-bottom-10  left-0 md:left-16 lg:left-9 hover_transtion_effect "
+          className=" space-y-2 p-3 bg-[#fdfdfd] w-[120px] md:w-[220px] lg:w-[180px] xl:w-[220px] mx-auto  z-30 absolute -bottom-3 md:-bottom-10  left-0 md:left-16 lg:left-9 hover_transtion_effect "
           data-aos="fade-up"
           data-aos-offset="200"
           data-aos-easing="ease-in-sine"

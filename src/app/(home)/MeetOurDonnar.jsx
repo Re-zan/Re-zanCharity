@@ -19,14 +19,14 @@ const MeetOurDonnar = () => {
   return (
     <section className="my-24  relative">
       <div
-        className="absolute text-center -mt-16 md:-mt-0 md:text-left my_container left-0 lg:left-32 top-0  border-dashed  border-b-2 border-b-[#aa3b4c]"
+        className="absolute text-center -mt-16 md:-mt-0 md:text-left my_container left-0 lg:left-8 xl:left-32 top-0  border-dashed  border-b-2 border-b-[#aa3b4c]"
         data-aos="fade-right"
         data-aos-offset="200"
         data-aos-easing="ease-in-sine"
         data-aos-duration="900"
       >
         <h2
-          className={`${pacifico.className} text-2xl  md:text-3xl lg:text-5xl text-[#aa3b4c] p-2 `}
+          className={`${pacifico.className} text-2xl  md:text-3xl lg:text-4xl xl:text-5xl text-[#aa3b4c] p-2 `}
         >
           Meet Our Donars
         </h2>

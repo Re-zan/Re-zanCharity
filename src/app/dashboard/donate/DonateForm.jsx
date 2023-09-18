@@ -17,7 +17,7 @@ const DonateForm = () => {
       <Toaster></Toaster>
 
       {/* form start */}
-      <div className="mb-10 w-[300px] md:w-[500px] mx-auto">
+      <div className="mb-10 w-[200px] md:w-[500px] mx-auto">
         <Elements stripe={stripePromise}>
           <CheckOutFrom></CheckOutFrom>
         </Elements>

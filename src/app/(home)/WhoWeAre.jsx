@@ -15,7 +15,7 @@ const WhoWeAre = () => {
   return (
     <section className="my_container grid grid-cols-1 md:grid-cols-2 ">
       {/* section heading part */}
-      <div className="flex items-center pl-3 lg:pl-0">
+      <div className="flex items-center pl-3 lg:pl-2 xl:pl-0">
         <div className="space-y-4">
           <h2
             className={`${pacifico.className}  text-5xl text-[#aa3b4c] `}

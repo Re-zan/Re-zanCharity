@@ -11,7 +11,7 @@ const DonarsSingle = ({ items }) => {
   }, []);
   const { name, image, donation_amount, message } = items;
   return (
-    <div>
+    <div className="lg:pr-2 xl:pr-0">
       <div
         className=" text-white mb-5 space-y-2  flex justify-end gap-4"
         data-aos="fade-up"
@@ -26,7 +26,7 @@ const DonarsSingle = ({ items }) => {
               Name: {name}
             </h2>
             <p
-              className={`${pacifico.zila}  hidden lg:block text-md w-[750px]`}
+              className={`${pacifico.zila}  hidden lg:block text-md lg:w-[550px] xl:w-[750px]`}
             >
               {message}
             </p>

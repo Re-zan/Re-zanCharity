@@ -53,7 +53,7 @@ const TheirStory = () => {
         </Swiper>
       </div>
 
-      <div className="flex items-center justify-end pr-3 lg:pr-0">
+      <div className="flex items-center justify-end pr-3 lg:pr-2 xl:pr-0">
         <div
           className="space-y-5 text-end"
           data-aos="zoom-in-up"
